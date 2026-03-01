@@ -1,0 +1,27 @@
+TEST: TOTAL CHOLESTEROL
+UNIT: mg/dL
+NORMAL: Below 200
+BORDERLINE: 200 - 239
+HIGH: 240 and above
+HIGH_MEANS: Total cholesterol is high. Risk of heart disease increases.
+
+TEST: LDL (Bad Cholesterol)
+UNIT: mg/dL
+NORMAL: Below 100
+BORDERLINE: 100 - 129
+HIGH: 130 and above
+HIGH_MEANS: LDL is high. Increases risk of artery blockage and heart attack.
+
+TEST: HDL (Good Cholesterol)
+UNIT: mg/dL
+NORMAL_MALE: Above 40
+NORMAL_FEMALE: Above 50
+LOW_MEANS: HDL is low. Lower protection against heart disease.
+
+TEST: TRIGLYCERIDES
+UNIT: mg/dL
+NORMAL: Below 150
+BORDERLINE: 150 - 199
+HIGH: 200 - 499
+VERY_HIGH: 500 and above
+HIGH_MEANS: Triglycerides are high. Risk of heart disease and pancreatitis.

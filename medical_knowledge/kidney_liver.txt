@@ -1,0 +1,31 @@
+TEST: CREATININE
+UNIT: mg/dL
+NORMAL_MALE: 0.74 - 1.35
+NORMAL_FEMALE: 0.59 - 1.04
+HIGH_MEANS: Creatinine is high. May indicate kidney dysfunction.
+
+TEST: UREA/BUN
+UNIT: mg/dL
+NORMAL: 7 - 20
+HIGH_MEANS: Urea is high. Kidneys may not be filtering waste properly.
+
+TEST: URIC ACID
+UNIT: mg/dL
+NORMAL_MALE: 3.4 - 7.0
+NORMAL_FEMALE: 2.4 - 6.0
+HIGH_MEANS: Uric acid is high. May indicate gout or kidney issues.
+
+TEST: SGPT/ALT
+UNIT: U/L
+NORMAL: 7 - 56
+HIGH_MEANS: SGPT is high. Liver may be inflamed or damaged.
+
+TEST: SGOT/AST
+UNIT: U/L
+NORMAL: 10 - 40
+HIGH_MEANS: SGOT is high. May indicate liver or heart muscle damage.
+
+TEST: BILIRUBIN TOTAL
+UNIT: mg/dL
+NORMAL: 0.2 - 1.2
+HIGH_MEANS: Bilirubin is high. May indicate jaundice or liver disease.

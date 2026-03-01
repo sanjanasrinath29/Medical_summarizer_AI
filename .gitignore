@@ -1,0 +1,18 @@
+# Virtual environment — never push this
+venv/
+
+# Your secret API key — never push this
+.env
+
+# ChromaDB storage — large files, not needed
+chroma_storage/
+
+# Django
+*.pyc
+__pycache__/
+db.sqlite3
+media/
+
+# OS files
+.DS_Store
+Thumbs.db

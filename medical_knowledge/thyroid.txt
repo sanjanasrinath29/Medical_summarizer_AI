@@ -1,0 +1,17 @@
+TEST: TSH
+UNIT: mIU/L
+NORMAL: 0.4 - 4.0
+LOW_MEANS: TSH is low. May indicate hyperthyroidism. Symptoms include weight loss and rapid heartbeat.
+HIGH_MEANS: TSH is high. May indicate hypothyroidism. Symptoms include fatigue and weight gain.
+
+TEST: T3
+UNIT: ng/dL
+NORMAL: 80 - 200
+LOW_MEANS: T3 is low. May indicate hypothyroidism.
+HIGH_MEANS: T3 is high. May indicate hyperthyroidism.
+
+TEST: T4
+UNIT: mcg/dL
+NORMAL: 5.0 - 12.0
+LOW_MEANS: T4 is low. May indicate hypothyroidism.
+HIGH_MEANS: T4 is high. May indicate hyperthyroidism.

@@ -1,0 +1,52 @@
+TEST: GLUCOSE FASTING OR FPG OR FBS
+UNIT: mg/dL
+NORMAL: 70 - 100
+PREDIABETES: 100 - 125
+DIABETES: 126 and above
+LOW_MEANS: Fasting glucose is low. May cause dizziness or fainting.
+HIGH_MEANS: Fasting glucose is high. May indicate prediabetes or diabetes.
+
+TEST: HbA1c
+UNIT: %
+NORMAL: Below 5.7
+PREDIABETES: 5.7 - 6.4
+DIABETES: 6.5 and above
+HIGH_MEANS: HbA1c is high. Reflects high average blood sugar over past 3 months.
+
+TEST: GLUCOSE POST MEAL (PP)
+UNIT: mg/dL
+NORMAL: Below 140
+PREDIABETES: 140 - 199
+DIABETES: 200 and above
+HIGH_MEANS: Post meal glucose is high. Blood sugar not clearing after meals properly.
+```
+
+### `medical_knowledge/lipid_profile.txt`
+```
+TEST: TOTAL CHOLESTEROL
+UNIT: mg/dL
+NORMAL: Below 200
+BORDERLINE: 200 - 239
+HIGH: 240 and above
+HIGH_MEANS: Total cholesterol is high. Risk of heart disease increases.
+
+TEST: LDL (Bad Cholesterol)
+UNIT: mg/dL
+NORMAL: Below 100
+BORDERLINE: 100 - 129
+HIGH: 130 and above
+HIGH_MEANS: LDL is high. Increases risk of artery blockage and heart attack.
+
+TEST: HDL (Good Cholesterol)
+UNIT: mg/dL
+NORMAL_MALE: Above 40
+NORMAL_FEMALE: Above 50
+LOW_MEANS: HDL is low. Lower protection against heart disease.
+
+TEST: TRIGLYCERIDES
+UNIT: mg/dL
+NORMAL: Below 150
+BORDERLINE: 150 - 199
+HIGH: 200 - 499
+VERY_HIGH: 500 and above
+HIGH_MEANS: Triglycerides are high. Risk of heart disease and pancreatitis.
