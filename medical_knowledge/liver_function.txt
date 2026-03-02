@@ -1,0 +1,43 @@
+TEST: ALKALINE PHOSPHATASE (ALP)
+UNIT: U/L
+NORMAL: 44 - 147
+LOW_MEANS: ALP is low. Rarely significant.
+HIGH_MEANS: ALP is high. May indicate liver disease, bile duct obstruction, or bone disease.
+
+TEST: GGT (GAMMA GLUTAMYL TRANSFERASE)
+UNIT: U/L
+NORMAL_MALE: 8 - 61
+NORMAL_FEMALE: 5 - 36
+HIGH_MEANS: GGT is high. Sensitive marker for liver stress. Often elevated with alcohol use or fatty liver.
+
+TEST: TOTAL PROTEIN
+UNIT: g/dL
+NORMAL: 6.0 - 8.3
+LOW_MEANS: Total protein is low. May indicate malnutrition or liver disease.
+HIGH_MEANS: Total protein is high. May indicate dehydration or infection.
+
+TEST: ALBUMIN
+UNIT: g/dL
+NORMAL: 3.5 - 5.0
+LOW_MEANS: Albumin is low. Indicates poor nutrition or liver not functioning well.
+HIGH_MEANS: Albumin is high. Usually indicates dehydration.
+
+TEST: GLOBULIN
+UNIT: g/dL
+NORMAL: 2.0 - 3.5
+HIGH_MEANS: Globulin is high. May indicate infection, inflammation, or immune disorder.
+
+TEST: A/G RATIO (ALBUMIN/GLOBULIN)
+UNIT: Ratio
+NORMAL: 1.2 - 2.2
+LOW_MEANS: A/G ratio is low. May indicate liver disease or immune disorder.
+
+TEST: DIRECT BILIRUBIN
+UNIT: mg/dL
+NORMAL: 0.0 - 0.3
+HIGH_MEANS: Direct bilirubin is high. May indicate bile duct obstruction or liver disease.
+
+TEST: INDIRECT BILIRUBIN
+UNIT: mg/dL
+NORMAL: 0.2 - 0.9
+HIGH_MEANS: Indirect bilirubin is high. May indicate hemolysis or Gilbert syndrome.

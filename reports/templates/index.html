@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medical Report Summarizer</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f0f4f8;
+        }
+
+        header {
+            background: #1a73e8;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        header p {
+            margin-top: 6px;
+            font-size: 14px;
+            opacity: 0.85;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 30px auto;
+            padding: 0 20px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 24px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+
+        .card h2 {
+            font-size: 18px;
+            margin-bottom: 16px;
+            color: #333;
+        }
+
+        .upload-area {
+            border: 2px dashed #1a73e8;
+            border-radius: 10px;
+            padding: 40px 20px;
+            text-align: center;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        .upload-area:hover { background: #f0f7ff; }
+
+        .upload-area .icon { font-size: 48px; }
+
+        .upload-area p {
+            margin-top: 10px;
+            color: #555;
+        }
+
+        input[type="file"] { display: none; }
+
+        .btn {
+            background: #1a73e8;
+            color: white;
+            border: none;
+            padding: 14px;
+            border-radius: 8px;
+            font-size: 16px;
+            width: 100%;
+            margin-top: 16px;
+            cursor: pointer;
+        }
+
+        .btn:hover { background: #1558b0; }
+
+        .btn:disabled {
+            background: #aaa;
+            cursor: not-allowed;
+        }
+
+        .status-msg {
+            text-align: center;
+            color: #1a73e8;
+            font-style: italic;
+            margin-top: 12px;
+            display: none;
+        }
+
+        .error-msg {
+            color: red;
+            text-align: center;
+            margin-top: 10px;
+            display: none;
+        }
+
+        .summary-box {
+            background: #f8f9ff;
+            border-left: 4px solid #1a73e8;
+            padding: 20px;
+            border-radius: 6px;
+            white-space: pre-wrap;
+            line-height: 1.8;
+            font-size: 15px;
+        }
+
+        .chat-box {
+            height: 320px;
+            overflow-y: auto;
+            border: 1px solid #e0e0e0;
+            border-radius: 10px;
+            padding: 16px;
+            margin-bottom: 16px;
+            background: #fafafa;
+        }
+
+       .message {
+    margin-bottom: 14px;
+    display: flex;
+    align-items: flex-end;
+}
+
+.message.user {
+    justify-content: flex-end;
+}
+
+.message.ai {
+    justify-content: flex-start;
+}
+
+.message .avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    flex-shrink: 0;
+}
+
+.message.ai .avatar {
+    background: #e8f0fe;
+    margin-right: 8px;
+    order: 0;
+}
+
+.message.user .avatar {
+    background: #1a73e8;
+    margin-left: 8px;
+    order: 2;
+}
+
+.bubble {
+    display: inline-block;
+    padding: 10px 16px;
+    border-radius: 18px;
+    max-width: 70%;
+    text-align: left;
+    line-height: 1.5;
+    font-size: 14px;
+    order: 1;
+}
+
+.user .bubble {
+    background: #1a73e8;
+    color: white;
+    border-bottom-right-radius: 4px;
+}
+
+.ai .bubble {
+    background: #f0f0f0;
+    color: #333;
+    white-space: pre-wrap;
+    border-bottom-left-radius: 4px;
+}
+
+        .chat-input-row {
+            display: flex;
+            gap: 10px;
+        }
+
+        .chat-input-row input {
+            flex: 1;
+            padding: 12px 16px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 14px;
+            outline: none;
+        }
+
+        .chat-input-row input:focus {
+            border-color: #1a73e8;
+        }
+
+        .chat-input-row button {
+            background: #1a73e8;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        .hidden { display: none; }
+
+        .suggestion-chips {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 12px;
+        }
+
+        .chip {
+            background: #e8f0fe;
+            color: #1a73e8;
+            border: 1px solid #c5d8fc;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 13px;
+            cursor: pointer;
+        }
+
+        .chip:hover { background: #d0e4ff; }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>🏥 Medical Report Summarizer</h1>
+    <p>Upload your report — get a clear, simple summary instantly</p>
+</header>
+
+<div class="container">
+
+    <!-- Upload Section -->
+    <div class="card">
+        <h2>📤 Upload Your Report</h2>
+
+        <div class="upload-area" onclick="document.getElementById('fileInput').click()">
+            <div class="icon">📄</div>
+            <p id="fileLabel">Click here to select your PDF report</p>
+            <p style="font-size:12px; margin-top:6px; color:#999">
+                Only PDF files supported
+            </p>
+        </div>
+
+        <input
+            type="file"
+            id="fileInput"
+            accept=".pdf"
+            onchange="handleFileSelect(event)"
+        >
+
+        <button class="btn" id="uploadBtn" onclick="uploadReport()" disabled>
+            Analyze My Report
+        </button>
+
+        <p class="status-msg" id="uploadStatus">
+            ⏳ Reading and analyzing your report. Please wait...
+        </p>
+        <p class="error-msg" id="uploadError"></p>
+    </div>
+
+    <!-- Summary Section -->
+    <div class="card hidden" id="summarySection">
+        <h2>📋 Your Report Summary</h2>
+        <div class="summary-box" id="summaryContent"></div>
+    </div>
+
+    <!-- Chat Section -->
+    <div class="card hidden" id="chatSection">
+        <h2>💬 Ask Questions About Your Report</h2>
+
+        <!-- Quick suggestion chips -->
+        <div class="suggestion-chips">
+            <span class="chip" onclick="askSuggestion(this)">
+                What is my overall health status?
+            </span>
+            <span class="chip" onclick="askSuggestion(this)">
+                Which values are abnormal?
+            </span>
+            <span class="chip" onclick="askSuggestion(this)">
+                Foods to improve my Hb?
+            </span>
+            <span class="chip" onclick="askSuggestion(this)">
+                Foods to control my sugar?
+            </span>
+            <span class="chip" onclick="askSuggestion(this)">
+                What does high cholesterol mean?
+            </span>
+        </div>
+
+        <div class="chat-box" id="chatBox">
+    <div class="message ai">
+        <div class="avatar">🏥</div>
+        <span class="bubble">
+            Hi! I have read your medical report.
+            You can ask me anything about it —
+            like what your values mean or
+            what foods can help improve them. 😊
+        </span>
+    </div>
+</div>
+
+        <div class="chat-input-row">
+            <input
+                type="text"
+                id="questionInput"
+                placeholder="Ask anything about your report..."
+                onkeypress="if(event.key==='Enter') askQuestion()"
+            >
+            <button onclick="askQuestion()">Send</button>
+        </div>
+    </div>
+
+</div>
+
+<script>
+    let currentReportId = null;
+
+    function handleFileSelect(event) {
+        const file = event.target.files[0];
+        if (file) {
+            document.getElementById('fileLabel').textContent =
+                '✅ Selected: ' + file.name;
+            document.getElementById('uploadBtn').disabled = false;
+        }
+    }
+
+    async function uploadReport() {
+        const fileInput = document.getElementById('fileInput');
+        const file = fileInput.files[0];
+        if (!file) return;
+
+        // Show loading
+        document.getElementById('uploadBtn').disabled = true;
+        document.getElementById('uploadBtn').textContent = 'Analyzing...';
+        document.getElementById('uploadStatus').style.display = 'block';
+        document.getElementById('uploadError').style.display = 'none';
+        document.getElementById('summarySection').classList.add('hidden');
+        document.getElementById('chatSection').classList.add('hidden');
+
+        const formData = new FormData();
+        formData.append('file', file);
+
+        try {
+            const response = await fetch('/api/upload/', {
+                method: 'POST',
+                body: formData
+            });
+
+            const data = await response.json();
+
+            if (!response.ok) {
+                throw new Error(data.error || 'Something went wrong');
+            }
+
+            currentReportId = data.report_id;
+
+            // Show summary
+            document.getElementById('summaryContent').textContent =
+                data.summary;
+            document.getElementById('summarySection')
+                .classList.remove('hidden');
+            document.getElementById('chatSection')
+                .classList.remove('hidden');
+
+        } catch (error) {
+            const errEl = document.getElementById('uploadError');
+            errEl.textContent = '❌ ' + error.message;
+            errEl.style.display = 'block';
+        } finally {
+            document.getElementById('uploadBtn').disabled = false;
+            document.getElementById('uploadBtn').textContent =
+                'Analyze My Report';
+            document.getElementById('uploadStatus').style.display = 'none';
+        }
+    }
+
+    function askSuggestion(chip) {
+        document.getElementById('questionInput').value = chip.textContent.trim();
+        askQuestion();
+    }
+
+   async function askQuestion() {
+    const input = document.getElementById('questionInput');
+    const question = input.value.trim();
+
+    if (!question || !currentReportId) return;
+
+    // Disable input while waiting
+    input.disabled = true;
+
+    addMessage(question, 'user');
+    input.value = '';
+
+    const loadingId = addMessage('Thinking...', 'ai');
+
+    try {
+        const response = await fetch(
+            `/api/ask/${currentReportId}/`,
+            {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify({question})
+            }
+        );
+
+        const data = await response.json();
+        document.getElementById(loadingId).textContent = data.answer;
+
+    } catch (error) {
+        document.getElementById(loadingId).textContent =
+            'Sorry, something went wrong. Please try again.';
+    } finally {
+        // Re-enable input after answer arrives
+        input.disabled = false;
+        input.focus();
+    }
+}
+    let messageCounter = 0;
+
+function addMessage(text, sender) {
+    messageCounter++;
+    const id = 'msg_' + messageCounter + '_' + sender;
+    const chatBox = document.getElementById('chatBox');
+
+    const avatar = sender === 'user' ? '👤' : '🏥';
+
+    const div = document.createElement('div');
+    div.className = `message ${sender}`;
+    div.innerHTML = `
+        <div class="avatar">${avatar}</div>
+        <span class="bubble" id="${id}">${text}</span>
+    `;
+
+    chatBox.appendChild(div);
+    chatBox.scrollTop = chatBox.scrollHeight;
+
+    return id;
+}
+</script>
+
+</body>
+</html>

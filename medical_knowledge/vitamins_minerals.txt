@@ -1,0 +1,71 @@
+TEST: VITAMIN D (25-OH Vitamin D)
+UNIT: ng/mL
+DEFICIENT: Below 20
+INSUFFICIENT: 20 - 29
+NORMAL: 30 - 100
+TOXIC: Above 100
+LOW_MEANS: Vitamin D is low. Very common in India due to indoor lifestyle. May cause bone weakness, fatigue, muscle pain, and low immunity.
+HIGH_MEANS: Vitamin D is too high. May indicate excess supplementation.
+
+TEST: VITAMIN B12 (Cobalamin)
+UNIT: pg/mL
+DEFICIENT: Below 200
+BORDERLINE: 200 - 300
+NORMAL: 300 - 900
+LOW_MEANS: Vitamin B12 is low. Very common in vegetarians. May cause fatigue, weakness, numbness in hands and feet, memory issues, and anemia.
+HIGH_MEANS: Vitamin B12 is high. Usually harmless but discuss with doctor.
+
+TEST: FOLATE / FOLIC ACID
+UNIT: ng/mL
+NORMAL: 3.1 - 17.5
+LOW_MEANS: Folate is low. May cause megaloblastic anemia and neural tube defects in pregnancy. Common with poor diet or alcohol use.
+
+TEST: SERUM IRON
+UNIT: mcg/dL
+NORMAL_MALE: 65 - 175
+NORMAL_FEMALE: 50 - 170
+LOW_MEANS: Serum iron is low. May indicate iron deficiency anemia or poor diet.
+HIGH_MEANS: Serum iron is high. May indicate iron overload or liver disease.
+
+TEST: FERRITIN
+UNIT: ng/mL
+NORMAL_MALE: 24 - 336
+NORMAL_FEMALE: 11 - 307
+LOW_MEANS: Ferritin is low. Iron stores are depleted. Early sign of iron deficiency even before anemia develops.
+HIGH_MEANS: Ferritin is high. May indicate inflammation, infection, or iron overload.
+
+TEST: TIBC (Total Iron Binding Capacity)
+UNIT: mcg/dL
+NORMAL: 250 - 370
+LOW_MEANS: TIBC is low. May indicate iron overload or chronic disease.
+HIGH_MEANS: TIBC is high. Indicates iron deficiency — body is trying to absorb more iron.
+
+TEST: TRANSFERRIN SATURATION
+UNIT: %
+NORMAL: 20 - 50
+LOW_MEANS: Transferrin saturation is low. Confirms iron deficiency.
+HIGH_MEANS: Transferrin saturation is high. May indicate iron overload.
+
+TEST: CALCIUM
+UNIT: mg/dL
+NORMAL: 8.5 - 10.5
+LOW_MEANS: Calcium is low. May cause muscle cramps, numbness, weak bones.
+HIGH_MEANS: Calcium is high. May indicate hyperparathyroidism or excess vitamin D.
+
+TEST: SODIUM
+UNIT: mEq/L
+NORMAL: 136 - 145
+LOW_MEANS: Sodium is low. May cause nausea, headache, confusion, seizures in severe cases.
+HIGH_MEANS: Sodium is high. May indicate dehydration.
+
+TEST: POTASSIUM
+UNIT: mEq/L
+NORMAL: 3.5 - 5.1
+LOW_MEANS: Potassium is low. May cause muscle weakness, cramps, irregular heartbeat.
+HIGH_MEANS: Potassium is high. Risk of dangerous heart rhythm problems.
+
+TEST: MAGNESIUM
+UNIT: mg/dL
+NORMAL: 1.7 - 2.3
+LOW_MEANS: Magnesium is low. May cause muscle cramps, anxiety, irregular heartbeat.
+HIGH_MEANS: Magnesium is high. May indicate kidney problems.

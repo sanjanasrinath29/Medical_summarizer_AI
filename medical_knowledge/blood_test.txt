@@ -7,42 +7,52 @@ LOW_MEANS: Hemoglobin is low. This may indicate anemia, iron deficiency, or bloo
 HIGH_MEANS: Hemoglobin is high. May indicate dehydration or a blood disorder.
 
 TEST: RED BLOOD CELLS (RBC)
-UNIT: million cells/mcL
+UNIT_OLD: million cells/mcL
+UNIT_MODERN: 10^12/L (same numeric value as million cells/mcL)
 NORMAL_MALE: 4.5 - 5.9
 NORMAL_FEMALE: 4.1 - 5.1
+NOTE: Whether unit is million cells/mcL or 10^12/L the normal range numbers are the same (4.5-5.9 for male)
 LOW_MEANS: RBC count is low. May indicate anemia or nutritional deficiency.
 HIGH_MEANS: RBC count is high. May indicate dehydration or lung disease.
 
-TEST: WHITE BLOOD CELLS (WBC)
-UNIT: cells/mcL
-NORMAL: 4500 - 11000
+TEST: WHITE BLOOD CELLS (WBC) / TOTAL LEUCOCYTE COUNT (TLC)
+UNIT_OLD: cells/mcL — NORMAL: 4500 - 11000
+UNIT_MODERN: 10^9/L — NORMAL: 4.0 - 11.0
+NOTE: 4500 cells/mcL = 4.5 x 10^9/L. Both are the same. If value is around 4-11 use 10^9/L range. If value is around 4000-11000 use cells/mcL range.
 LOW_MEANS: WBC is low. May indicate viral infection or bone marrow issue.
 HIGH_MEANS: WBC is high. May indicate infection, inflammation, or leukemia.
 
-TEST: PLATELETS
-UNIT: cells/mcL
-NORMAL: 150000 - 400000
+TEST: PLATELETS / PLATELET COUNT
+UNIT_OLD: cells/mcL — NORMAL: 150000 - 400000
+UNIT_MODERN: 10^9/L — NORMAL: 150 - 400
+NOTE: 150000 cells/mcL = 150 x 10^9/L. Both are the same. If value is around 150-400 use 10^9/L range. If value is around 150000-400000 use cells/mcL range.
 LOW_MEANS: Platelets are low. Risk of bleeding. May indicate dengue or other conditions.
 HIGH_MEANS: Platelets are high. Risk of clotting.
 
-TEST: HEMATOCRIT (HCT/PCV)
+TEST: HEMATOCRIT (HCT) / PACKED CELL VOLUME (PCV)
 UNIT: %
 NORMAL_MALE: 41 - 53
 NORMAL_FEMALE: 36 - 46
 LOW_MEANS: Hematocrit is low. Consistent with anemia.
 HIGH_MEANS: Hematocrit is high. May indicate dehydration.
 
-TEST: MCV
+TEST: MCV (MEAN CORPUSCULAR VOLUME)
 UNIT: fL
 NORMAL: 80 - 100
-LOW_MEANS: MCV is low. Red blood cells are smaller than normal. May indicate iron deficiency.
-HIGH_MEANS: MCV is high. Red blood cells are larger than normal. May indicate B12 deficiency.
+LOW_MEANS: MCV is low. Red blood cells are smaller than normal. May indicate iron deficiency anemia.
+HIGH_MEANS: MCV is high. Red blood cells are larger than normal. May indicate B12 or folate deficiency.
 
-TEST: MCH
+TEST: MCH (MEAN CORPUSCULAR HEMOGLOBIN)
 UNIT: pg
 NORMAL: 27 - 33
-LOW_MEANS: MCH is low. Red blood cells carry less hemoglobin than normal.
+LOW_MEANS: MCH is low. Red blood cells carry less hemoglobin than normal. May indicate iron deficiency.
 HIGH_MEANS: MCH is high. May indicate macrocytic anemia.
+
+TEST: MCHC (MEAN CORPUSCULAR HEMOGLOBIN CONCENTRATION)
+UNIT: g/dL
+NORMAL: 31.5 - 34.5
+LOW_MEANS: MCHC is low. Red blood cells have less hemoglobin concentration. Consistent with iron deficiency anemia.
+HIGH_MEANS: MCHC is high. May indicate hereditary spherocytosis.
 
 TEST: NEUTROPHILS
 UNIT: %
@@ -60,3 +70,26 @@ TEST: EOSINOPHILS
 UNIT: %
 NORMAL: 1 - 6
 HIGH_MEANS: Eosinophils are high. May indicate allergy or parasitic infection.
+
+TEST: MONOCYTES
+UNIT: %
+NORMAL: 2 - 10
+HIGH_MEANS: Monocytes are high. May indicate chronic infection or inflammation.
+
+TEST: BASOPHILS
+UNIT: %
+NORMAL: 0 - 1
+HIGH_MEANS: Basophils are high. May indicate allergic reaction or inflammation.
+
+TEST: ESR (ERYTHROCYTE SEDIMENTATION RATE)
+UNIT: mm/hr
+NORMAL_MALE: Below 15
+NORMAL_FEMALE: Below 20
+HIGH_MEANS: ESR is high. Indicates inflammation or infection somewhere in the body.
+
+TEST: TLC (TOTAL LEUCOCYTE COUNT)
+UNIT_MODERN: 10^9/L — NORMAL: 4.0 - 10.0
+UNIT_OLD: cells/mcL — NORMAL: 4000 - 10000
+NOTE: Same test as WBC. If value is 4-10 it is in 10^9/L. If value is 4000-10000 it is in cells/mcL.
+LOW_MEANS: TLC is low. Reduced immunity.
+HIGH_MEANS: TLC is high. May indicate infection or inflammation.

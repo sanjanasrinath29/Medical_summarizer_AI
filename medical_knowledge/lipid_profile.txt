@@ -25,3 +25,69 @@ BORDERLINE: 150 - 199
 HIGH: 200 - 499
 VERY_HIGH: 500 and above
 HIGH_MEANS: Triglycerides are high. Risk of heart disease and pancreatitis.
+TEST: HDL/LDL RATIO
+UNIT: Ratio
+NORMAL: 0.3 - 0.4
+HIGH_MEANS: HDL to LDL ratio is high. This actually means more good cholesterol relative to bad cholesterol. Generally considered favorable but discuss with doctor.
+
+TEST: TOTAL CHOLESTEROL/HDL RATIO
+UNIT: Ratio
+NORMAL: Below 4.0
+BORDERLINE: 4.0 - 5.0
+HIGH_MEANS: Total cholesterol to HDL ratio is high. Higher risk of heart disease.
+
+TEST: VLDL CHOLESTEROL
+UNIT: mg/dL
+NORMAL: Below 30
+HIGH_MEANS: VLDL is high. Associated with increased triglycerides and heart disease risk.
+
+TEST: NON-HDL CHOLESTEROL
+UNIT: mg/dL
+NORMAL: Below 130
+HIGH_MEANS: Non-HDL cholesterol is high. Includes all bad cholesterol types.
+
+TEST: HbA1c IFCC
+UNIT: mmol/mol
+NORMAL: Below 39.0
+HIGH_MEANS: HbA1c IFCC is high. Indicates poor blood sugar control over past 3 months.
+
+TEST: HS CRP (HIGH SENSITIVITY CRP)
+UNIT: mg/L
+NORMAL: Below 1.0
+BORDERLINE: 1.0 - 3.0
+HIGH: Above 3.0
+HIGH_MEANS: HS CRP is high. Indicates inflammation in the body. May signal infection, heart disease risk, or autoimmune condition.
+
+TEST: ESR (ERYTHROCYTE SEDIMENTATION RATE)
+UNIT: mm/hr
+NORMAL_FEMALE: Below 20
+NORMAL_MALE: Below 15
+HIGH_MEANS: ESR is high. Indicates inflammation or infection somewhere in the body.
+
+TEST: MCHC
+UNIT: g/dL
+NORMAL: 31.5 - 34.5
+LOW_MEANS: MCHC is low. Red blood cells have less hemoglobin concentration than normal. Consistent with iron deficiency anemia.
+
+TEST: PCV (PACKED CELL VOLUME / HEMATOCRIT)
+UNIT: %
+NORMAL_MALE: 40 - 50
+NORMAL_FEMALE: 36 - 46
+LOW_MEANS: PCV is low. Indicates reduced red blood cell volume. Consistent with anemia.
+
+TEST: TLC (TOTAL LEUCOCYTE COUNT)
+UNIT: 10^9/L
+NORMAL: 4.0 - 10.0
+LOW_MEANS: TLC is low. Reduced white blood cells. May indicate viral infection or immune issue.
+HIGH_MEANS: TLC is high. Elevated white blood cells. May indicate infection or inflammation.
+
+TEST: PLATELET COUNT
+UNIT: 10^9/L
+NORMAL: 150 - 410
+LOW_MEANS: Platelets are low. Risk of bleeding.
+HIGH_MEANS: Platelets are high. Risk of clotting.
+
+TEST: HBsAg (HEPATITIS B SURFACE ANTIGEN)
+UNIT: Qualitative
+NORMAL: Negative
+HIGH_MEANS: HBsAg is positive. Indicates Hepatitis B infection. Consult doctor immediately.
