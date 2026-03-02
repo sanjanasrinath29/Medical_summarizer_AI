@@ -256,5 +256,6 @@ Then open `http://127.0.0.1:8080`
 ## 👩‍💻 Author
 
 **Sanjana Srinath** & **Mithali S Channal**
-- LinkedIn: https://www.linkedin.com/in/sanjana-srinath-s2901/  and https://www.linkedin.com/in/mithali-s-channal2002
+- LinkedIn: https://www.linkedin.com/in/sanjana-srinath-s2901/  and 
+https://www.linkedin.com/in/mithali-s-channal2002
 - Email: sanjanasrinath1@gmail.com and mithalischannal143@gmail.com
